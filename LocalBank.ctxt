@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=LocalBank
+comment1.params=
+comment1.target=LocalBank()
+comment2.params=accNumber
+comment2.target=void\ setAccNumber(int)
+comment3.params=accPasswd
+comment3.target=void\ setAccPasswd(int)
+comment4.params=
+comment4.target=boolean\ checkValid()
+comment5.params=
+comment5.target=void\ loggedOut()
+comment6.params=amount
+comment6.target=boolean\ withdraw(int)
+comment7.params=amount
+comment7.target=boolean\ deposit(int)
+comment8.params=
+comment8.target=int\ getBalance()
+numComments=9

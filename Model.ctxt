@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Model
+comment1.params=
+comment1.target=Model()
+comment2.params=message
+comment2.target=void\ initialise(java.lang.String)
+comment3.params=button
+comment3.target=void\ process(java.lang.String)
+comment4.params=button
+comment4.target=java.lang.Boolean\ tryNumbers(java.lang.String)
+comment5.params=button
+comment5.target=java.lang.Boolean\ tryCommands(java.lang.String)
+comment6.params=newState
+comment6.target=void\ setState(java.lang.String)
+comment7.params=
+comment7.target=void\ display()
+numComments=8
