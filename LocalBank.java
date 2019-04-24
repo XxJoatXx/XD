@@ -11,6 +11,7 @@ public class LocalBank
     int theAccNumber = 0;        // The current account number
     int theAccPasswd = 0;        // The current account password
     LocalBankAccount currentAccount = null;
+    LocalBankAccount currentPasswd = null;
     ArrayList<LocalBankAccount> accounts = new ArrayList<>();
 
     protected LocalBank()
@@ -26,7 +27,7 @@ public class LocalBank
     { 
         Debug.trace( "LocalBank::setAccNumber: accNumber = " + accNumber ); 
             
-        accNumber = theAccNumber;
+        theAccNumber = accNumber;
         
 
     }
@@ -36,7 +37,7 @@ public class LocalBank
     { 
         Debug.trace( "LocalBank::setAccPasswd: accPassword = " + accPasswd ); 
            
-        accPasswd = theAccPasswd;
+        theAccPasswd = accPasswd;
         
 
     }
@@ -49,7 +50,8 @@ public class LocalBank
 
         Debug.trace( "LocalBank::checkValid" ); 
            
-        for (LocalBankAccount b: accounts) {
+        for (LocalBankAccount b: accounts) 
+        {
             if(b.account == theAccNumber && b.password ==theAccPasswd){
                 currentAccount = b;
                 return true;
@@ -99,6 +101,38 @@ public boolean deposit( int amount )
         return false;
     }
     }
+
+    // validate current account's password to allow to change it if returned true,
+    // return false if the current password is incorrect
+    public boolean changePassVal()
+{
+    Debug.trace("LocalBank::changePassVal");
+    for(LocalBankAccount b: accounts) 
+{
+        if(b.password == theAccPasswd) {
+            currentPasswd = b;
+            return true;
+
+}
+}
+        currentPasswd = null;
+        theAccPasswd = -1;    
+        return false;
+}
+
+    public boolean changePass()
+{ 
+        for(LocalBankAccount b: accounts)
+        {
+        if(b.newPass > 0 && b.newPass != theAccPasswd) {
+            accounts.set(1, b);
+            return true;
+        }
+    }
+        return false;
+}
+        
+        
 
     // Return the current balance in the account
     public int getBalance() 

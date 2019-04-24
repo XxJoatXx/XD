@@ -72,7 +72,7 @@ class View
         // The number of button per row is set in the css file
         String labels[] = {
                 "7",    "8",  "9",  "",  "Dep",  "",
-                "4",    "5",  "6",  "",  "W/D",  "",
+                "4",    "5",  "6",  "",  "W/D",  "C/P",
                 "1",    "2",  "3",  "",  "Bal",  "Fin",
                 "CLR",  "0",  "",   "",  "",     "Ent" };
 

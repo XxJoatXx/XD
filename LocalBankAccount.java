@@ -5,6 +5,7 @@ public class LocalBankAccount
     public int password;
     public int balance;
     public int overdraftlimit;
+    public int newPass;
     
     public LocalBankAccount(int a, int p)
     {

@@ -13,7 +13,7 @@ public class Model
     final String ACCOUNT_NO = "account_no";
     final String PASSWORD = "password";
     final String LOGGED_IN = "logged_in";
-
+    final String NEW_PASSWD = "new_passwd";
     // variables representing the ATM model
     String state = ACCOUNT_NO;      // the state it is currently in
     int  number = 0;                // current number displayed in GUI (as a number, not a string)
@@ -154,6 +154,25 @@ public class Model
                     display2 = "Deposited: " + number;
                     number = 0;
                     break;
+                case "C/P" :                // Change password action
+                    bank.setAccPasswd(number);
+                    display1 = "";
+                    display2 = "Please enter your current password";
+                    number = 0;
+                    if(bank.changePassVal() )
+                    {
+                        setState(NEW_PASSWD);
+                        display2 = "Please enter your new password";
+                        if(state.equals(NEW_PASSWD) )
+                    {
+                        if(bank.changePass() )
+                        { 
+                            display2 = "You have successfully changed your password";
+                    
+                    }
+                }
+            }
+                    break;    
                 case "Fin" :               // Finish transactions
                     // go back to the log in state
                     setState(ACCOUNT_NO);
