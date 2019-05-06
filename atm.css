@@ -1,17 +1,53 @@
 #Layout {
     -fx-grid-lines-visible: false;
-    -fx-hgap: 5;
-    -fx-vgap: 5;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
     -fx-padding: 10;
+    -fx-background-color: #3700B3;
+
+}
+
+#OutputPrimary{
+    -fx-text-fill: #fff;
+    -fx-background-color: #03DAC5;
+    -fx-font-weight: bold;
+    -fx-background-radius: 0px;
+    -fx-focus-color: transparent;
+}
+
+#ScrollLayout{
+    -fx-background-color:transparent;
+}
+
+#OutputSecondary{
+    -fx-background-radius: 0px;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-focus-color: transparent;
+}
+
+#OutputSecondary .content{ 
+    -fx-background-color: #03DAC5;
+}
+
+#Header{
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
 }
 
 #Buttons {
-    -fx-pref-columns: 6;
+    -fx-pref-columns: 7;
     -fx-pref-tile-width: 75;
-    -fx-hgap: 5;
+    -fx-hgap: 0;
     -fx-vgap: 5;
 }
 
 .button {
-    -fx-font: bold 16pt "courier new";
+
+    -fx-background-radius: 0px;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 50px;
+    -fx-background-color: #6200EE;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
 }

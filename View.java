@@ -11,8 +11,8 @@ import javafx.util.*;
 // the current state of the Model, and handles user input
 class View
 {
-    int H = 420;         // Height of window pixels 
-    int W = 500;         // Width  of window pixels 
+    int H = 500;         // Height of window pixels 
+    int W = 470;         // Width  of window pixels 
 
     // variables for components of the user interface
     Label      message;       // Message area 
@@ -56,12 +56,16 @@ class View
         message  = new Label();         // Message bar at the top
         grid.add(message, 0, 0);       // Add to GUI at the top       
 
-        output1  = new TextField();     // text field for numbers      
+        output1  = new TextField();     // text field for numbers 
+        output1.setId("OutputPrimary");     
         grid.add(output1, 0, 1);       // Add to GUI on second row                      
 
         output2  = new TextArea();      // multi-line text area
+        output2.setId("OutputSecondary");
         output2.setEditable(false);     // Read only (for the user)
         scrollPane  = new ScrollPane(); // create a scrolling window
+        scrollPane.setFitToWidth(true);
+        scrollPane.setId("ScrollLayout");
         scrollPane.setContent( output2 );  // put the text area 'inside' the scrolling window
         grid.add(scrollPane, 0, 2);    // add the scrolling window to GUI on third row
 
@@ -71,10 +75,10 @@ class View
         // Button labels - empty strings are spacers
         // The number of button per row is set in the css file
         String labels[] = {
-                "7",    "8",  "9",  "",  "Dep",  "",
-                "4",    "5",  "6",  "",  "W/D",  "C/P",
-                "1",    "2",  "3",  "",  "Bal",  "Fin",
-                "CLR",  "0",  "",   "",  "",     "Ent" };
+                "7",    "8",  "9",  "",  "Dep",  "C/P",
+                "4",    "5",  "6",  "",  "W/D",  "",
+                "1",    "2",  "3",  "",  "Bal",  "",
+                "CLR",  "0",  "Ent",   "", "Fin",  "" };
 
         for ( int i=0; i<labels.length; i++ )
         {
@@ -100,7 +104,8 @@ class View
         window.show();
 
         // set the opening message at the top
-        message.setText( "Bank" );                     // Opening message
+        message.setId("Header");
+        message.setText( "Welcome to BIEDACTWO GURWA XDDD bank" );                     // Opening message
     }
 
     // This is how the View talks to the Controller
